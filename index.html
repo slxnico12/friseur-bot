@@ -1,0 +1,23 @@
+<script>
+    // Global variable to hold the salon ID
+    window.SALON_ID = 'your_salon_id_here';
+
+    function salonHeaders() {
+        return {
+            'x-salon-id': window.SALON_ID
+        };
+    }
+
+    // Example of updating fetch calls
+    fetch('your_api_endpoint_here', {
+        method: 'GET',
+        headers: {
+            ...salonHeaders(),
+            // Any other headers you may need
+        }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+</script>
+
+<!-- Existing content of index.html remains unchanged -->
